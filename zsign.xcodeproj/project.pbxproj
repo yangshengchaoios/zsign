@@ -16,6 +16,8 @@
 		D3A1F3DF233DAA8D008CBEAA /* bundle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3A1F3D4233DAA8D008CBEAA /* bundle.cpp */; };
 		D3A1F3E0233DAA8D008CBEAA /* openssl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3A1F3D5233DAA8D008CBEAA /* openssl.cpp */; };
 		D3A1F3E1233DAA8D008CBEAA /* macho.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3A1F3D7233DAA8D008CBEAA /* macho.cpp */; };
+		D3A1F3E8233DB792008CBEAA /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D3A1F3E7233DB792008CBEAA /* libssl.a */; };
+		D3A1F3EA233DB79C008CBEAA /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D3A1F3E9233DB79C008CBEAA /* libcrypto.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -50,6 +52,8 @@
 		D3A1F3D6233DAA8D008CBEAA /* signing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = signing.h; sourceTree = "<group>"; };
 		D3A1F3D7233DAA8D008CBEAA /* macho.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = macho.cpp; sourceTree = "<group>"; };
 		D3A1F3D8233DAA8D008CBEAA /* bundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bundle.h; sourceTree = "<group>"; };
+		D3A1F3E7233DB792008CBEAA /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libssl.a; sourceTree = "<group>"; };
+		D3A1F3E9233DB79C008CBEAA /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcrypto.a; sourceTree = "<group>"; };
 		D3EE84EC233DA3D300B4724B /* zsign */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = zsign; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -58,6 +62,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3A1F3EA233DB79C008CBEAA /* libcrypto.a in Frameworks */,
+				D3A1F3E8233DB792008CBEAA /* libssl.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +103,8 @@
 		D3EE84EE233DA3D300B4724B /* zsign */ = {
 			isa = PBXGroup;
 			children = (
+				D3A1F3E9233DB79C008CBEAA /* libcrypto.a */,
+				D3A1F3E7233DB792008CBEAA /* libssl.a */,
 				D3A1F3C8233DAA8D008CBEAA /* archo.cpp */,
 				D3A1F3C6233DAA8D008CBEAA /* archo.h */,
 				D3A1F3D4233DAA8D008CBEAA /* bundle.cpp */,
@@ -301,6 +309,10 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 99U9VSN546;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/zsign",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SYSTEM_HEADER_SEARCH_PATHS = /Users/yangshengchao/Documents/MEP/external/include;
 			};
@@ -311,6 +323,10 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 99U9VSN546;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/zsign",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SYSTEM_HEADER_SEARCH_PATHS = /Users/yangshengchao/Documents/MEP/external/include;
 			};

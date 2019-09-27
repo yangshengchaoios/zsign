@@ -89,8 +89,8 @@ bool GenerateCMS(X509 *scert, EVP_PKEY *spkey, const string &strCDHashData, cons
 		return CMSError();
 	}
 
-	BIO *bother1 = BIO_new_mem_buf(appleDevCACert, strlen(appleDevCACert));
-	BIO *bother2 = BIO_new_mem_buf(appleRootCACert, strlen(appleRootCACert));
+	BIO *bother1 = BIO_new_mem_buf((void *)appleDevCACert, strlen(appleDevCACert));
+	BIO *bother2 = BIO_new_mem_buf((void *)appleRootCACert, strlen(appleRootCACert));
 	if (!bother1 || !bother2)
 	{
 		return CMSError();
@@ -119,7 +119,7 @@ bool GenerateCMS(X509 *scert, EVP_PKEY *spkey, const string &strCDHashData, cons
 		return CMSError();
 	}
 
-	BIO *in = BIO_new_mem_buf(strCDHashData.c_str(), strCDHashData.size());
+	BIO *in = BIO_new_mem_buf((void *)strCDHashData.c_str(), strCDHashData.size());
 	if (!in)
 	{
 		return CMSError();
@@ -181,8 +181,8 @@ bool GenerateCMS(X509 *scert, EVP_PKEY *spkey, const string &strCDHashData, cons
 
 bool GenerateCMS(const string &strSignerCertData, const string &strSignerPKeyData, const string &strCDHashData, const string &strCDHashesPlist, string &strCMSOutput)
 {
-	BIO *bcert = BIO_new_mem_buf(strSignerCertData.c_str(), strSignerCertData.size());
-	BIO *bpkey = BIO_new_mem_buf(strSignerPKeyData.c_str(), strSignerPKeyData.size());
+	BIO *bcert = BIO_new_mem_buf((void *)strSignerCertData.c_str(), strSignerCertData.size());
+	BIO *bpkey = BIO_new_mem_buf((void *)strSignerPKeyData.c_str(), strSignerPKeyData.size());
 
 	if (!bcert || !bpkey)
 	{
@@ -269,7 +269,7 @@ bool GetCertSubjectCN(const string &strCertData, string &strSubjectCN)
 		return false;
 	}
 
-	BIO *bcert = BIO_new_mem_buf(strCertData.c_str(), strCertData.size());
+	BIO *bcert = BIO_new_mem_buf((void *)strCertData.c_str(), strCertData.size());
 	if (!bcert)
 	{
 		return CMSError();
@@ -672,7 +672,7 @@ bool ZSignAsset::Init(const string &strSignerCertFile, const string &strSignerPK
 		for (size_t i = 0; i < jvProv["DeveloperCertificates"].size(); i++)
 		{
 			string strCertData = jvProv["DeveloperCertificates"][i].asData();
-			BIO *bioCert = BIO_new_mem_buf(strCertData.c_str(), strCertData.size());
+			BIO *bioCert = BIO_new_mem_buf((void *)strCertData.c_str(), strCertData.size());
 			if (NULL != bioCert)
 			{
 				x509Cert = d2i_X509_bio(bioCert, NULL);
