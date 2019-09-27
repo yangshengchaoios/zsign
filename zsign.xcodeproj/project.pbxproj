@@ -35,7 +35,6 @@
 /* Begin PBXFileReference section */
 		D3A1F3C5233DAA8D008CBEAA /* openssl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = openssl.h; sourceTree = "<group>"; };
 		D3A1F3C6233DAA8D008CBEAA /* archo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = archo.h; sourceTree = "<group>"; };
-		D3A1F3C7233DAA8D008CBEAA /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		D3A1F3C8233DAA8D008CBEAA /* archo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = archo.cpp; sourceTree = "<group>"; };
 		D3A1F3CA233DAA8D008CBEAA /* common.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = common.cpp; sourceTree = "<group>"; };
 		D3A1F3CB233DAA8D008CBEAA /* base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = base64.h; sourceTree = "<group>"; };
@@ -114,7 +113,6 @@
 				D3A1F3D2233DAA8D008CBEAA /* macho.h */,
 				D3A1F3D5233DAA8D008CBEAA /* openssl.cpp */,
 				D3A1F3C5233DAA8D008CBEAA /* openssl.h */,
-				D3A1F3C7233DAA8D008CBEAA /* README.md */,
 				D3A1F3D1233DAA8D008CBEAA /* signing.cpp */,
 				D3A1F3D6233DAA8D008CBEAA /* signing.h */,
 				D3A1F3D3233DAA8D008CBEAA /* zsign.cpp */,
